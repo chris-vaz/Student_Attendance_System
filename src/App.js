@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-// import logo from './logo.svg';
 import './styles.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -25,29 +25,29 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Student Attendance System</h1>
-      <form onSubmit={createStudent}>
-        <label htmlFor='name'>Student Name: </label>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required /><br />
+      <h1 className='text-center'>Student Attendance System</h1>
+      <form onSubmit={createStudent} className="mx-auto w-50">
+        <label htmlFor='name' className="text-center">Student Name: </label>
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required className='form-control'/><br />
         <label htmlFor="rollno">Roll Number: </label>
-        <input type="number" value={rollno} onChange={(e) => setRollno(e.target.value)} required /><br />
+        <input type="number" value={rollno} onChange={(e) => setRollno(e.target.value)} required className='form-control'/><br />
         <label htmlFor="checkInTime">Check-in Time</label>
-        <input type="time" value={checkInTime} onChange={(e) => setCheckInTime(e.target.value)} required /><br />
+        <input type="time" value={checkInTime} onChange={(e) => setCheckInTime(e.target.value)} required className='form-control w-25'/><br />
         <label htmlFor="checkOutTime">Check-Out Time</label>
-        <input type="time" value={checkOutTime} onChange={(e) => setCheckOutTime(e.target.value)} required /><br />
-        <input type="submit" value="Submit" />
+        <input type="time" value={checkOutTime} onChange={(e) => setCheckOutTime(e.target.value)} required className='form-control w-25'/><br />
+        <input className="btn btn-primary mx-auto" type="submit" value="Submit"/>
       </form>
       <br />
 
-      <h2>Total Students Present at School Now: {students.length}</h2>
+      <h2 className='text-center'>Total Students Present at School Now: {students.length}</h2>
 
-      <table>
+      <table className="mt-5 table table-striped">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Roll Number</th>
-            <th>Check-in Time</th>
-            <th>Check-out Time</th>
+            <th scope="col">Name</th>
+            <th scope="col">Roll Number</th>
+            <th scope="col">Check-in Time</th>
+            <th scope="col">Check-out Time</th>
           </tr>
         </thead>
         <tbody>
