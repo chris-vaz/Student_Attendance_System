@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './styles.css';
 
 function App() {
@@ -13,8 +13,14 @@ function App() {
   const createStudent = (event) => {
     event.preventDefault();
     console.log("Form Submitted!")
+    const newStudent = {
+      name,
+      rollno,
+      checkInTime,
+      checkOutTime
+    };
     // Adding new students to the list of students
-    setStudents([...students, name, rollno, checkInTime, checkOutTime])
+    setStudents([...students,newStudent ])
   }
 
   return (
@@ -33,7 +39,7 @@ function App() {
       </form>
       <br />
 
-      <h2>Total Students Checked In: {students.length}</h2>
+      <h2>Total Students Present at School Now: {students.length}</h2>
 
       <table>
         <thead>
